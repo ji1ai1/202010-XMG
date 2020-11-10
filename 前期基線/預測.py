@@ -64,7 +64,7 @@ for 甲 in [3, 4, 5]:
 		行為表 = pandas.concat([行為表, 甲行為表], ignore_index=True)
 行為表.columns = ["用戶標識"] + 行為表.columns[1:].to_list()
 行為表 = pandas.concat([行為表.loc[:, ["用戶標識", "季度", "月度"]], 行為表.drop(["用戶標識", "季度", "月度"], axis=1)], axis=1)
-行為表.B6 = [(datetime.datetime.strptime(行為表.B6[子], "%Y-%m-%d %H:%M:%S") - datetime.datetime(year=2019 + 行為表.季度[子] // 5, month=1 + (3 * 行為表.季度[子]) % 12, day=1)).seconds if 行為表.B6[子] is not numpy.nan else numpy.nan for 子 in range(行為表.shape[0])]
+行為表.B6 = [(datetime.datetime.strptime(行為表.B6[子], "%Y-%m-%d %H:%M:%S") - datetime.datetime(year=2019 + 行為表.季度[子] // 4, month=1 + (3 * 行為表.季度[子]) % 12, day=1)).seconds if 行為表.B6[子] is not numpy.nan else numpy.nan for 子 in range(行為表.shape[0])]
 行為表["B8"] = 行為表.B2 - 行為表.B4
 行為表["B9"] = 行為表.B2 + 行為表.B4
 行為表["B10"] = 行為表.B2 / 行為表.B4
