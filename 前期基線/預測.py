@@ -10,7 +10,6 @@
 #	data/aum_m*.csv
 #	data/behavior_m*.csv
 #	data/cunkuan_m*.csv
-#	data/y_Q*_3.csv
 #輸出：
 #	result.csv
 #
